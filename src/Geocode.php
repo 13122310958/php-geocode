@@ -19,6 +19,8 @@ class Geocode
      */
     private $serviceUrl = "://maps.googleapis.com/maps/api/geocode/json?";
 
+    private $language = "en";
+
     /**
      * Array containing the query results
      */
@@ -46,6 +48,11 @@ class Geocode
         return $this->serviceUrl;
     }
 
+    public function setLanguage($language){
+        $this->language = $language;
+        return $this->language;
+    }
+
     /**
      * get
      *
@@ -60,7 +67,7 @@ class Geocode
             throw new \Exception("Address is required in order to process");
         }
 
-        $url= $this->getServiceUrl() . "&address=" . urlencode($address);
+        $url= $this->getServiceUrl() . "&address=" . urlencode($address) . "&language=".$this->language;
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, $url);
