@@ -73,3 +73,6 @@ It should be noted that, the Google Geocoding API has the following limits in pl
 - 2,500 requests per 24 hour period.
 - 5 requests per second.
 
+#language codes
+https://support.google.com/ds/answer/1203817?hl=en      
+- see "AdWords geo and language codes" 
